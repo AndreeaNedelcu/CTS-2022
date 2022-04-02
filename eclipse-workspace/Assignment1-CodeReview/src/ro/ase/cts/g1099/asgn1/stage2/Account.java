@@ -1,4 +1,4 @@
-package ro.ase.cts.g1099.asgn1.stage1;
+package ro.ase.cts.g1099.asgn1.stage2;
 
 public class Account {
 	public double	loanValue;
@@ -7,7 +7,7 @@ public class Account {
 	public int accountType;
 	public static final int	STANDARD=0,BUDGET=1,PREMIUM=2,SUPER_PREMIUM=3;
 	
-	public double getLoan() {
+	public double loan() {
 		System.out.println("The loan value is " + this.loanValue);
 		return loanValue;
 	}
@@ -22,7 +22,7 @@ public class Account {
 		return loanValue*rate;
 	}
 	
-	public void setLoanValue(double value) throws Exception {
+	public void setValue(double value) throws Exception {
 		if(value<0)
 			throw new Exception();
 		else
@@ -40,7 +40,7 @@ public class Account {
 		System.out.println("This is an account");
 	}
 
-	public static double calculate(Account[] 	accounts)
+	public static double getTotalFee(Account[] 	accounts)
 	{
 	double totalFee=0.0;
 	Account	account;
