@@ -6,6 +6,7 @@ public class Account {
 	public int	daysActive;
 	public AccountType accountType;
 	public static final double BROKER_FEE_PERCENTAGE=0.0125;
+	public static final int DAYS_PER_YEAR = 365; 
 	
 	public double getLoan() {
 		System.out.println("The loan value is " + this.loanValue);
@@ -45,14 +46,14 @@ public class Account {
 	}
 	
 	public static  double getPrincipalInterest(Account account) {
-		return account.loanValue*Math.pow(account.rate,(account.daysActive/365)) - account.loanValue;
+		return account.loanValue*Math.pow(account.rate,(account.daysActive/DAYS_PER_YEAR)) - account.loanValue;
 	}
 
 	public static double getTotalFee(Account[] 	accounts)
 	{
 	double totalFee=0.0;
 	Account	account;
-	int daysPerYear = 365; //year
+	
 	for	(int	i=0;i<accounts.length;i++)	{
 	account=accounts[i];
 	
