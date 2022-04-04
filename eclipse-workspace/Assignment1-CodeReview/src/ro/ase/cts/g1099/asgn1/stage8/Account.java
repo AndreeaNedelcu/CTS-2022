@@ -69,7 +69,7 @@ public class Account {
 			return false;
 			}
 	}
-	
+	 
 	public static  double getPrincipalInterest(Account account) {
 		return account.loanValue* (Math.pow(account.rate,(account.daysActive/DAYS_PER_YEAR)) - 1);
 	}
